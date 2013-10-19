@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hubsub</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <link rel="stylesheet" href="/vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css?d">
+
+        <script type="text/javascript" src="/vendors/jquery/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="/vendors/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/vendors/underscore/underscore-min.js"></script>
+        <!--script type="text/javascript" src="/vendors/underscore/.js"></script-->
+
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="brand" href="/">HUBSUB</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><a href="/anime/">База аниме</a></li>
+                        <li><a href="/trans/">База переводов</a></li>
+                        <li><a href="/forum/">Форум</a></li>
+                        <li><a href="/about/">О сайте</a></li>
+                        <li class="offset1">
+                            <form class="navbar-form">
+                                <input type="text" class="span2" placeholder="Поиск">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+                <div class="login pull-right nav-collapse span2">
+                    <a href="#login" data-toggle="modal">Войдите</a> или <a href="#register" data-toggle="modal">зарегистрируйтесь</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Очень полезная информация</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, commodi ipsam pariatur atque voluptates possimus placeat quod earum perferendis ea. Rem, molestiae, dolor aut provident fugit porro pariatur? Quos, repudiandae.</p>
+    </div>
+
+
+    <!-- Forms -->
+
+
+    <div id="login" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Вход на сайт</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-signin">
+                <input type="text" name="name_or_email" placeholder="Имя пользователя или email">
+                <input type="password" name="password" placeholder="Пароль">
+                <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Запомнить меня
+                </label>
+                <div class="social_login">
+                    Войти через:
+                    <a href="#twitter" class="icon icon-eye-close"></a>
+                    <a href="#vk" class="icon icon-move"></a>
+                    <a href="#fb" class="icon icon-tint"></a>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary">Войти</a>
+        </div>
+    </div>
+
+    <div id="register" class="modal hide fade">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h3>Регистрация</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label" for="id_username">Имя</label>
+                    <div class="controls">
+                        <input type="text" id="id_username" name="username">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="email">E-mail</label>
+                    <div class="controls">
+                        <input type="text" id="id_email" name="email">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">Пароль</label>
+                    <div class="controls">
+                        <input type="password" id="id_password" name="password">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password_again">Пароль ещё раз</label>
+                    <div class="controls">
+                        <input type="password" id="id_password_again" name="password_again">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <label class="checkbox">
+                            <input type="checkbox"> я буду следовать <a href="/eula/">правилам сервиса</a>
+                       </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" class="btn btn-primary">Зарегистрироваться</a>
+        </div>
+    </div>
+
+    </body>
+</html>
