@@ -15,6 +15,29 @@
         <style>
 
         </style>
+
+        <script>
+        $(function () {
+            var loginPopover;
+
+            $('.login__control').popover({
+                html: true,
+                placement: 'bottom',
+                title: 'Вход на сайт',
+                content: $('.login_popover').html(),
+                conteiner: '.login'
+            });
+
+            loginPopover = $(".login");
+
+            loginPopover.on('click', ".site_login_trigger", function () {
+                var trigger = $(this),
+                    loginForm = loginPopover.find(".site_login");
+                loginForm.toggle();
+                trigger.text(loginForm.is(":visible") ? trigger.data('collapseTitle') : trigger.data('expandTitle'));
+            });
+        });
+        </script>
     </head>
 
     <body>
@@ -37,7 +60,7 @@
                     </ul>
                 </div>
                 <div class="login pull-right nav-collapse span2">
-                    <a href="#login" data-toggle="modal">Войдите</a> или <a href="#register" data-toggle="modal">зарегистрируйтесь</a>
+                    <button class="btn login__control">Войти</button>
                 </div>
             </div>
         </div>
@@ -49,77 +72,24 @@
     </div>
 
 
-    <!-- Forms -->
+    <!-- appendable elements -->
 
-
-    <div id="login" class="modal hide fade">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Вход на сайт</h3>
+    <div class="login_popover hide">
+        <div class="social_login">
+            <button class="btn btn-small social_login__button">Twitter</button>
+            <button class="btn btn-small social_login__button">VK</button>
+            <button class="btn btn-small social_login__button">Facebook</button>
         </div>
-        <div class="modal-body">
-            <form class="form-signin">
-                <input type="text" name="name_or_email" placeholder="Имя пользователя или email">
-                <input type="password" name="password" placeholder="Пароль">
-                <label class="checkbox">
-                    <input type="checkbox" value="remember-me"> Запомнить меня
-                </label>
-                <div class="social_login">
-                    Войти через:
-                    <a href="#twitter" class="icon icon-eye-close"></a>
-                    <a href="#vk" class="icon icon-move"></a>
-                    <a href="#fb" class="icon icon-tint"></a>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn btn-primary">Войти</a>
-        </div>
-    </div>
-
-    <div id="register" class="modal hide fade">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3>Регистрация</h3>
-        </div>
-        <div class="modal-body">
-            <form class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label" for="id_username">Имя</label>
-                    <div class="controls">
-                        <input type="text" id="id_username" name="username">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="email">E-mail</label>
-                    <div class="controls">
-                        <input type="text" id="id_email" name="email">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="password">Пароль</label>
-                    <div class="controls">
-                        <input type="password" id="id_password" name="password">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="password_again">Пароль ещё раз</label>
-                    <div class="controls">
-                        <input type="password" id="id_password_again" name="password_again">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <label class="checkbox">
-                            <input type="checkbox"> я буду следовать <a href="/eula/">правилам сервиса</a>
-                       </label>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer">
-            <a href="#" class="btn btn-primary">Зарегистрироваться</a>
-        </div>
+        <hr>
+        <center><span class="site_login_trigger link" data-expand-title="Войти используя профиль сайта" data-collapse-title="Скрыть">Войти используя профиль сайта</span></center>
+        <form class="site_login hide">
+            <input type="text" name="name_or_email" placeholder="Имя пользователя или email">
+            <input type="password" name="password" placeholder="Пароль">
+            <label class="checkbox">
+                <input type="checkbox" value="remember-me"> Запомнить меня
+            </label>
+            <button class="btn btn-primary" type="submit">Войти</button>
+        </form>
     </div>
 
     </body>
