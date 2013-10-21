@@ -14,7 +14,7 @@ body {
 }
 
 .inline-form, .inline-form:before, .inline-form:after {
-	display: inline;
+	display: inline-block;
 }
 
 .social_login { margin-bottom: 20px; }
