@@ -13,6 +13,10 @@ body {
     cursor: pointer;
 }
 
+.inline-form, .inline-form:before, .inline-form:after {
+	display: inline;
+}
+
 .social_login { margin-bottom: 20px; }
 .social_login .social_login__button { width: 70px; }
 .site_login { margin-top: 20px; }
